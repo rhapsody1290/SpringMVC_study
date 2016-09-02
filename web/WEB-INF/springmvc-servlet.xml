@@ -7,11 +7,14 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--去配置扫描包，使@Controller生效-->
+    <context:component-scan base-package="cn.apeius.springmvc.controller"/>
+
     <!--配置handlerMapping-->
-    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <!--<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>-->
 
     <!--配置handlerAdapter-->
-    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+    <!--<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>-->
 
     <!--配置自定义Handler，name表示对应的访问路径-->
     <bean name="/hello.do" class="cn.apeius.springmvc.controller.Hello"/>
