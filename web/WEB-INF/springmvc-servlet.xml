@@ -16,6 +16,9 @@
     <!--配置handlerAdapter-->
     <!--<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>-->
 
+    <!--配置注解驱动，加载HandlerMapping，HandlerAdapter-->
+    <mvc:annotation-driven/>
+
     <!--配置自定义Handler，name表示对应的访问路径-->
     <bean name="/hello.do" class="cn.apeius.springmvc.controller.Hello"/>
 
