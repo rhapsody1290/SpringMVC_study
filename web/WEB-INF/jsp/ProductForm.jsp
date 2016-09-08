@@ -30,6 +30,7 @@
 				<input id="submit" type="submit" tabindex="5" 
 				    value="Add Product">
 			</p>
+
 	</fieldset>
 </form>
 </div>

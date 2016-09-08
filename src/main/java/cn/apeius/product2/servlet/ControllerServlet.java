@@ -1,4 +1,4 @@
-package cn.apeius.product.servlet;
+package cn.apeius.product2.servlet;
 import cn.apeius.product.domain.Product;
 import cn.apeius.product.form.ProductForm;
 
