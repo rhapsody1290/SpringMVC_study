@@ -1,4 +1,4 @@
-package app02c.domain;
+package cn.apeius.product3.domain;
 import java.io.Serializable;
 
 public class Product implements Serializable {

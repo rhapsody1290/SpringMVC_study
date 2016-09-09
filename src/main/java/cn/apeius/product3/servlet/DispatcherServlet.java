@@ -1,4 +1,7 @@
-package app02c.servlet;
+package cn.apeius.product3.servlet;
+import cn.apeius.product3.controller.InputProductController;
+import cn.apeius.product3.controller.SaveProductController;
+
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -7,8 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import app02c.controller.InputProductController;
-import app02c.controller.SaveProductController;
 
 public class DispatcherServlet extends HttpServlet {
     

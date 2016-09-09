@@ -1,17 +1,15 @@
-package app02c.controller;
+package cn.apeius.product3.controller;
 
-import java.util.List;
+import cn.apeius.product3.domain.Product;
+import cn.apeius.product3.form.ProductForm;
+import cn.apeius.product3.validator.ProductValidator;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import app02c.domain.Product;
-import app02c.form.ProductForm;
-import app02c.validator.ProductValidator;
+import java.util.List;
 
 public class SaveProductController implements Controller {
 
-    @Override
     public String handleRequest(HttpServletRequest request,
             HttpServletResponse response) {
         ProductForm productForm = new ProductForm();

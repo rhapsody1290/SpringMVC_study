@@ -1,9 +1,9 @@
-package app02c.validator;
+package cn.apeius.product3.validator;
+
+import cn.apeius.product3.form.ProductForm;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import app02c.form.ProductForm;
 
 public class ProductValidator {
 	

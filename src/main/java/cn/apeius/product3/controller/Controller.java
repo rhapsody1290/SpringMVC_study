@@ -1,4 +1,4 @@
-package app02c.controller;
+package cn.apeius.product3.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

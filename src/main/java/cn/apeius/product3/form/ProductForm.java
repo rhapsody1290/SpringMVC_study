@@ -1,4 +1,4 @@
-package app02c.form;
+package cn.apeius.product3.form;
 
 public class ProductForm {
     private String name;
