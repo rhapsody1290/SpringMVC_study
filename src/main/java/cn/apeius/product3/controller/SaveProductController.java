@@ -13,25 +13,25 @@ public class SaveProductController implements Controller {
     public String handleRequest(HttpServletRequest request,
             HttpServletResponse response) {
         ProductForm productForm = new ProductForm();
-        // populate action properties
+        //填充表单属性
         productForm.setName(request.getParameter("name"));
         productForm.setDescription(request.getParameter("description"));
         productForm.setPrice(request.getParameter("price"));
 
-        // validate ProductForm
+        //校验表单
         ProductValidator productValidator = new ProductValidator();
         List<String> errors = productValidator.validate(productForm);
         if (errors.isEmpty()) {
-            // create Product from ProductForm
+            //创建领域对象Product
             Product product = new Product();
             product.setName(productForm.getName());
             product.setDescription(productForm.getDescription());
             product.setPrice(Float.parseFloat(productForm.getPrice()));
 
-            // no validation error, execute action method
-            // insert code to save product to the database
+            //没有校验错误，执行action方法
+            //保存产品信息到数据库的代码
 
-            // store product in a scope variable for the view
+            //将product存入request域中，便于后面页面显示
             request.setAttribute("product", product);
             return "/WEB-INF/jsp/ProductDetails.jsp";
         } else {
