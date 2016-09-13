@@ -19,11 +19,13 @@
     <!--配置注解驱动，会默认加载HandlerMapping，HandlerAdapter-->
     <mvc:annotation-driven/>
 
-    <!--配置自定义Handler，name表示对应的访问路径-->
+    <!--spring2.5前配置自定义Handler，name表示对应的访问路径-->
     <bean name="/hello.do" class="cn.apeius.springmvc.controller.Hello"/>
+    <bean name="/product_input.do" class="cn.apeius.product4.controller.InputProductController"/>
+    <bean name="/product_save.do" class="cn.apeius.product4.controller.SaveProductController"/>
 
-    <!--配置试图解析器
-    Example: prefix="/WEB-INF/jsp/", suffix=".jsp", viewname="test" -> "/WEB-INF/jsp/test.jsp-->
+    <!--配置试图解析器-->
+    <!--Example: prefix="/WEB-INF/jsp/", suffix=".jsp", viewname="test" -> "/WEB-INF/jsp/test.jsp-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>

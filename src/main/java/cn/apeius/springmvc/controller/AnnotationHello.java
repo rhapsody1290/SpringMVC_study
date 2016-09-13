@@ -6,6 +6,7 @@ import com.sun.deploy.net.HttpResponse;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -225,5 +226,9 @@ public class AnnotationHello {
         return "redirect:/success.html";
     }
 
-
+    @RequestMapping(value="/test20")
+    public ModelAndView test20(Model model){
+        model.addAttribute("msg","test20");
+        return new ModelAndView("hello","msg","sfddf");
+    }
 }
