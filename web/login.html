@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Title</title>
+<style>
+#global{
+    width:560px;
+    margin:100px auto;
+    padding: 20px;
+    border: 1px solid #dedede;
+    background: #efefef;
+}
+
+form {
+    font:100% verdana;
+    min-width: 500px;
+    max-width: 600px;
+    width: 560px;
+}
+form label{
+    width:230px;
+    display: inline-block;
+    text-align: right;
+}
+legend {
+    font-size: 1.3em;
+}
+
+#buttons {
+     text-align: right;
+}
+</style>
+</head>
+<body>
+<div id = "global">
+    <form action="/SpringMVC_study/test22.do">
+        <fieldset>
+            <legend>用户登录</legend>
+            <p>
+                <label>出生日期：</label>
+                <input type="text" name="birthday"/>
+            </p>
+            <p id = "buttons">
+                <input type="submit" value="测试"/>
+            </p>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

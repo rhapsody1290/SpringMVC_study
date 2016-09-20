@@ -11,6 +11,6 @@
     <title>$Title$</title>
   </head>
   <body>
-  <jsp:forward page="/product_input.action"/>
+  <jsp:forward page="/product_input"/>
   </body>
 </html>

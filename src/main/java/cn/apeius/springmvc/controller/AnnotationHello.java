@@ -7,6 +7,8 @@ import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,7 +19,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Asus on 2016/9/2.
@@ -231,4 +235,38 @@ public class AnnotationHello {
         model.addAttribute("msg","test20");
         return new ModelAndView("hello","msg","sfddf");
     }
+
+    @RequestMapping(value="/test21")
+    public ModelAndView test21(@ModelAttribute("msg") String msg,Model model){
+        Map<String, Object> map = model.asMap();
+        for(Map.Entry<String, Object> entry : map.entrySet()){
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+        return new ModelAndView("hello");
+    }
+
+    @ModelAttribute
+    public void test22(Model model){
+        //model.addAttribute("msg","qm");
+    }
+
+    @RequestMapping(value = "/test22")
+    public ModelAndView test22(@RequestParam("birthday") Date birthday){
+        return new ModelAndView("hello","msg",birthday);
+    }
+
+//    @ModelAttribute
+//    public String test23(){
+//        return new String("qm");
+//    }
+
+    @RequestMapping
+    public String test24(Model model){
+        Map<String, Object> map = model.asMap();
+        for(Map.Entry<String,Object> entry:map.entrySet()){
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+        return "forward:/WEB-INF/views/hello.jsp";
+    }
+
 }
