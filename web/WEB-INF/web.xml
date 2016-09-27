@@ -13,7 +13,10 @@
         <servlet-name>springmvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
-
+    <context-param>
+        <param-name>encoding</param-name>
+        <param-value>utf-8</param-value>
+    </context-param>
     <!--<servlet>
         <servlet-name>ControllerServlet</servlet-name>
         <servlet-class>cn.apeius.product.servlet.ControllerServlet</servlet-class>

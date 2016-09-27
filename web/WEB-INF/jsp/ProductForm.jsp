@@ -1,46 +1,40 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Add Product Form</title>
+<title><spring:message code="page.productform.title"/></title>
 <style type="text/css">@import url("<c:url value="/css/main.css"/>");</style>
 </head>
 <body>
 
 <div id="global">
+Current Locale : ${pageContext.response.locale}
+<br/>
+accept-language header: ${header["accept-language"]}
+
 <form:form commandName="product" action="product_save" method="post">
     <fieldset>
-        <legend>Add a product</legend>
-        <p class="errorLine">
+        <legend><spring:message code="form.name"/></legend>
+        <p>
+            <label for="name"><spring:message code="label.productName" text="default text" />:</label>
+            <form:input id="name" path="name" cssErrorClass="error"/>
             <form:errors path="name" cssClass="error"/>
         </p>
         <p>
-            <label for="name">*Product Name: </label>
-            <form:input id="name" path="name" tabindex="1"/>
+            <label for="description"><spring:message code="label.description"/>: </label>
+            <form:input id="description" path="description"/>
         </p>
         <p>
-            <label for="description">Description: </label>
-            <form:input id="description" path="description" tabindex="2"/>
-        </p>
-        <p class="errorLine">
-            <form:errors path="price" cssClass="error"/>
-        </p>
-        <p>
-            <label for="price">*Price: </label>
-            <form:input id="price" path="price" tabindex="3"/>
-        </p>
-        <p class="errorLine">
-            <form:errors path="productionDate" cssClass="error"/>
-        </p>
-        <p>
-            <label for="productionDate">*Production Date: </label>
-            <form:input id="productionDate" path="productionDate" tabindex="4"/>
+            <label for="price"><spring:message code="label.price" text="default text" />: </label>
+            <form:input id="price" path="price" cssErrorClass="error"/>
         </p>
         <p id="buttons">
-            <input id="reset" type="reset" tabindex="5">
-            <input id="submit" type="submit" tabindex="6" 
-                value="Add Product">
+            <input id="reset" type="reset" tabindex="4" 
+                value="<spring:message code="button.reset"/>">
+            <input id="submit" type="submit" tabindex="5" 
+                value="<spring:message code="button.submit"/>">
         </p>
     </fieldset>
 </form:form>

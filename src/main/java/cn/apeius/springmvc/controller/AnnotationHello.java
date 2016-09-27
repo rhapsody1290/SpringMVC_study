@@ -2,6 +2,7 @@ package cn.apeius.springmvc.controller;
 
 import cn.apeius.springmvc.pojo.User;
 import cn.apeius.springmvc.pojo.UserForm;
+import cn.apeius.springmvc.pojo.UserInfo;
 import com.sun.deploy.net.HttpResponse;
 import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.w3c.dom.html.HTMLTitleElement;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -191,6 +193,7 @@ public class AnnotationHello {
             // multipartFile.getOriginalFilename() 获取文件的原始名称
             multipartFile.transferTo(new File("d:\\tmp\\" + multipartFile.getOriginalFilename()));
         }
+
         return "redirect:/success.html";
 
     }
@@ -260,13 +263,22 @@ public class AnnotationHello {
 //        return new String("qm");
 //    }
 
-    @RequestMapping
+    @RequestMapping(value = "/test24")
     public String test24(Model model){
+        System.out.println("test24");
         Map<String, Object> map = model.asMap();
         for(Map.Entry<String,Object> entry:map.entrySet()){
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
         return "forward:/WEB-INF/views/hello.jsp";
+    }
+
+    @RequestMapping("saysth.do")
+    public void test(UserInfo user) {
+        System.out.println(user.getFirstName());
+        System.out.println(user.getLastName());
+        System.out.println(user.getContactInfo().getTel());
+        System.out.println(user.getContactInfo().getAddress());
     }
 
 }

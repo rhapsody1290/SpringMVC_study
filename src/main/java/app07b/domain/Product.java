@@ -1,30 +1,28 @@
 package app07b.domain;
 import java.io.Serializable;
-import java.util.Date;
+import java.util.List;
 
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
+import org.springframework.web.multipart.MultipartFile;
 
 public class Product implements Serializable {
-    private static final long serialVersionUID = 78L;
+    private static final long serialVersionUID = 74458L;
 
-    @Size(min=1, max=10,message = "1-10")
+    @NotNull
+    @Size(min=1, max=10)
     private String name;
 
-    @NotNull(message = "描述不能为空")
-    private String description;
+	private String description;
     private Float price;
-    
-    @Past
-    private Date productionDate;
+    private List<MultipartFile> images;
 
     public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
     public String getDescription() {
         return description;
     }
@@ -37,11 +35,10 @@ public class Product implements Serializable {
     public void setPrice(Float price) {
         this.price = price;
     }
-    public Date getProductionDate() {
-        return productionDate;
+    public List<MultipartFile> getImages() {
+        return images;
     }
-    public void setProductionDate(Date productionDate) {
-        this.productionDate = productionDate;
+    public void setImages(List<MultipartFile> images) {
+        this.images = images;
     }
-
 }
